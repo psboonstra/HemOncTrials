@@ -1,0 +1,63 @@
+---
+title: "Clinical Trial Statistics for Clinical Investigators"
+author: "Phil Boonstra, PhD"
+date: "July 21, 2025"
+format: 
+  revealjs:
+    smaller: true
+    scrollable: true
+    theme: serif
+    self-contained: true
+    slide-number: c/t
+editor: source
+engine: knitr
+bibliography: references.bib  
+csl: biometrics.csl
+nocite: |
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(animation);
+library(dfcrm);
+library(ggplot2);
+# See here:https://arelbundock.com/posts/quarto_figures/index.html
+knitr::opts_chunk$set(
+  out.width = "70%", # enough room to breath
+  fig.width = 6,     # reasonable size
+  fig.asp = 0.618,   # golden ratio
+  fig.align = "center", # mostly what I want
+  echo = FALSE
+)
+out2fig = function(out.width, out.width.default = 0.7, fig.width.default = 6) {
+  fig.width.default * out.width / out.width.default 
+}
+recache = F;
+options(digits = 3);
+source_path = "/Users/philb/Desktop/Work/Teaching/Bios619_Winter2018/";
+```
+
+
+## Outline
+
+1. Punchline
+2. Today's Phase I environment 
+3. Designs
+4. Phase I checklist of questions from your statistician
+5. Efficacy
+
+## Summary/Discussion
+
+- Significant conceptual leap from 3+3 to model-based designs
+
+- Probability of CRM correctly identifying MTD increases with sample size
+
+- Typical to constrain model-based recommendations to maximize patient safety [@goodman.sim]
+    * Cohorts of size $>1$ at each dose level (moderates dose escalation)
+    * Never escalate more than one dose level per patient
+    * Never assign dose $j$ when its estimated rated of DLT exceeds $p_T$ by some tolerance
+
+- Concept of patient horizon, e.g. @simon.biometrics
+
+
+## References
