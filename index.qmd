@@ -73,7 +73,7 @@ More sophisticated conventional designs use a statistical model to estimate the 
 Chasing after short-term toxicity can lead you astray:
 
 1. The design is built to succeed: you'll nearly always be able to estimate an MTD (but it may turn out to be inefficacious) [@thall.ct]
-2. Focusing on short-term toxicity may be : patients are living longer and on treatment for longer, e.g. "People can’t live with grade two diarrhea for a year"  [@cheung.ct]
+2. Focusing on short-term toxicity may be: patients for whom the drug is intended are living longer and on treatment for longer, e.g. "People can’t live with grade two diarrhea for a year"  [@cheung.ct]
 3. Conventional assumption about toxicity-efficacy relationship may not hold for many agents [@shah.nejm]
 
 57.6% of oncology phase I trials make it phase II, but just 6.7% of phase II trials
@@ -184,11 +184,17 @@ Figure 1, @shah.nejm
 
 A seamless design is one practical way to achieve some of the goals of Project Optimus. 
 
-Seamless designs combine phase I and phase II into a single trial, with the goal of identifying MTD and assessing efficacy in a single trial [@jaki.ejc, @boonstra.ct]
+Seamless designs combine phase I and phase II into a single trial, with the goal of identifying MTD and assessing efficacy in a single trial [@boonstra.ct], [@boonstra.aoc]
 
 ## 
 
-Seamless designs are *not* just phase I trials followed by a large additional cohort of patients at the MTD [@boonstra.jnci]. 
+Seamless designs are ideally *not* just phase I trials followed by a adhoc additional cohort of patients at the MTD [@boonstra.jnci]
+
+  * Sometimes just a Phase I and Phase II mashed together into one protocol, e.g. 3+3 design followed by Simon's two-stage design [@jaki.ejc]
+
+  * Better to incorporate both toxicity and efficacy for making dosing decisions throughout the trial e.g. the EffTox design [@thall.biometrics]
+  
+  * Generally require more statistical support and clinician input
 
 ## Phase III
 
@@ -197,18 +203,47 @@ Typical hallmarks of Phase III trials:
 1) Large (hundreds or thousands of patients)
 2) Randomized, including standard of care
 3) Clinically relevant endpoints (overall survival instead of response)
-4) Designed to support regulatory approval for labels
+4) Support regulatory approval for labels. 
+5) Often designed and written by study sponsor
 
 ## Other thoughts / Phil's rants
 
-Rogel's Cancer Data Science (CDS) shared resource provides biostatistical support
-for the development of investigator-initiated trials (IITs)
+Rogel's Cancer Data Science (CDS) shared resource provides biostatistical support for the development of investigator-initiated trials (IITs). 
 
 <https://www.rogelcancercenter.org/research/shared-resources-and-cores/cancer-data-science>
 
-CDS doesn't support using the 3+3 design in Phase I trials, and the Protocol Review
-Committee (PRC) doesn't approve IIT protocols that use it. 
+These are usually Phase I/II trials. 
 
-## 
+CDS doesn't support using the 3+3 design in Phase I trials, and the Protocol Review Committee (PRC) doesn't approve IIT protocols that use it. 
 
+## Endpoints vs parameters vs objectives
+
+- Endpoints are the data you are measuring for each patient, e.g. grade >=3 hematologic toxicity, best overall response
+
+- Parameters are unknown population level summaries to be estimated, e.g. maximum tolerated dose, grade >=3 hematologic toxicity rate, best overall response rate
+
+- Objectives are the goals of the study, usually accompanied by a specific hypothesis, e.g. to demonstrate that the complete response rate is 30\% or higher 
+
+When a paper states "The trial met its primary endpoint" it usually means "The trial achieved its primary objective"
+
+## Phase I checklist of questions from your statistician
+
+  - Number of agents with varying doses?
+  - How many doses of each agent?
+  - What toxicities will be considered DLTs?
+  - What is an acceptable maximum DLT rate?
+  - How many patients can you afford (in time and dollars)?
+  - Toxicity (MTD/MTC) or Toxicity & Efficacy (BOD/BOC)?
+      
+      * What is a response (tumor size or biologic target, i.e. PK/PD)?
+      * What is minimum acceptable response rate?
+  
+## Phase II checklist of questions from your statistician
+
+  - More than one dose level?
+  - What is your patient population? If the treatment is targeted, how will this impact eligibility?
+  - How many patients can you afford (in time and dollars)?
+  - How is response defined (tumor size or biologic target, i.e. PK/PD)?
+  - What is minimum acceptable response rate?
+    
 ## References
